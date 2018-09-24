@@ -50,6 +50,32 @@ double PIDController::compute(double target_velocity, double actual_velocity) {
     //               to write the code for this method
     //       Step 3: After Writing the method, build it and verify 
     //               your implementation  
-
     return 7; 
+}
+
+/**
+ * @brief Method to get value of private class member previous_error_ 
+ * @param none
+ * @return double
+ */
+double PIDController::getPreviousError() {
+    return previous_error_;
+}
+
+/**
+ * @brief Method to get value of private class member accumulation_error_ 
+ * @param none
+ * @return double
+ */
+double PIDController::getAccumulationError() {
+    return accumulation_error_;
+}
+
+/**
+ * @brief Method to get value of private class member time_interval_ 
+ * @param none
+ * @return double
+ */
+double PIDController::getTimeInterval() {
+    return time_interval_;
 }
