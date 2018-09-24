@@ -25,13 +25,27 @@ PID is a control loop feedback mechanism. It continuously calculates an error va
 
 The above three coefficients are used in tuning a PID controller. Tuning is the process of determining the ideal values for Kp, Ki, and Kd in order to achieve the desired response.  
 
-## <a name="authors"></a> Authors for part 1
-- **Driver:** Yash Shah (UID: 115710498)
-- **Navigator:** Ashish Patel (UID: 115730625)
+## <a name="authors"></a> Authors for Part 1
+- **Driver:** Yash Shah (UID: 115710498) (github: ysshah95)
+- **Navigator:** Ashish Patel (UID: 115730625) (github: Learner1729)
+
+## Authors for Part 2
+- **Driver:** 
+- **Navigator:** 
 
 ## <a name="class"></a> Class Diagram
+<p align="center">
+<a target="_blank"><img src="UML_Diagrams/ClassDiagram_TDD_V2.png"
+alt="NMPC" width="480" height="360" border="10" />
+</a>
+</p>
 
 ## <a name="activity"></a> Activity Diagram
+<p align="center">
+<a target="_blank"><img src="UML_Diagrams/ActivityDiagram_TDD.png"
+alt="NMPC" width="480" height="960" border="10" />
+</a>
+</p>
 
 ## <a name="implementation"></a> Standard install via command-line
 ```
