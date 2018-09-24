@@ -9,6 +9,11 @@
 #ifndef INCLUDE_PID_HPP_
 #define INCLUDE_PID_HPP_
 
+/**
+ * The PIDController class has variables for each of the term as well  as time
+ * interval and error variables. It has the method to implement PID controller to achieve the 
+ * desired goal.
+ */
 class PIDController{
  public:
   /**
@@ -57,7 +62,12 @@ class PIDController{
   */
   auto getTimeInterval() -> double;
  private:
-  double Kp_, Ki_, Kd_, time_interval_, previous_error_, accumulation_error_;
+  double Kp_ //< Proportional Constant
+  double Ki_ //< Integral Constant
+  double Kd_ //< Derivative Constant
+  double time_interval_ //< Time Step
+  double previous_error_ //< Previous Error
+  double accumulation_error_ //< Cumulative Error
 };
 
 #endif  // INCLUDE_PID_HPP_
