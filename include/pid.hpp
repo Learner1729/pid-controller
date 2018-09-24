@@ -12,7 +12,7 @@
 /**
  * The PIDController class has variables for each of the term as well  as time
  * interval and error variables. It has the method to implement PID controller to achieve the 
- * desired goal.
+ * desired goal and methods to get the error variables and time interval. 
  */
 class PIDController{
  public:
@@ -32,7 +32,7 @@ class PIDController{
   * @return none
   */
   PIDController(double Kp, double Ki, double Kd, double time_interval);
-  
+
   /**
   * @brief compute method 
   * @param[1] target_velocity, which is Set Point(SP)
@@ -61,13 +61,14 @@ class PIDController{
   * @return double
   */
   auto getTimeInterval() -> double;
+
  private:
-  double Kp_ //< Proportional Constant
-  double Ki_ //< Integral Constant
-  double Kd_ //< Derivative Constant
-  double time_interval_ //< Time Step
-  double previous_error_ //< Previous Error
-  double accumulation_error_ //< Cumulative Error
+  double Kp_;  //< Proportional Constant
+  double Ki_;  //< Integral Constant
+  double Kd_;  //< Derivative Constant
+  double time_interval_;  //< Time Step
+  double previous_error_;  //< Previous Error
+  double accumulation_error_;  //< Cumulative Error
 };
 
 #endif  // INCLUDE_PID_HPP_

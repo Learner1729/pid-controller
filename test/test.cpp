@@ -30,7 +30,7 @@ TEST(PIDControllerTest, initializationValues) {
   ASSERT_NE(control1.getTimeInterval(), 0.0);
 
   // tests value initialization using parameterized constructor
-  PIDController control2(1.0,1.0,1.0,1.0);
+  PIDController control2(1.0, 1.0, 1.0, 1.0);
   ASSERT_EQ(control2.getTimeInterval(), 1.0);
 }
 
@@ -38,11 +38,10 @@ TEST(PIDControllerTest, initializationValues) {
  * @brief Tests for checking PID algorithm
  */
 TEST(PIDControllerTest, computeFunction) {
-
   // tests compute method
   PIDController control(0.05, 0.4, 0.0001, 0.005);
-  EXPECT_DOUBLE_EQ(control.compute(0.0,0.0), 0.0);
-  EXPECT_DOUBLE_EQ(control.compute(5.0,4.0), 4.072);
-  EXPECT_DOUBLE_EQ(control.compute(7.0,8.0), 7.91);
-  EXPECT_DOUBLE_EQ(control.compute(0.0,0.0), 0.00);
+  EXPECT_DOUBLE_EQ(control.compute(0.0, 0.0), 0.0);
+  EXPECT_DOUBLE_EQ(control.compute(5.0, 4.0), 4.072);
+  EXPECT_DOUBLE_EQ(control.compute(7.0, 8.0), 7.91);
+  EXPECT_DOUBLE_EQ(control.compute(0.0, 0.0), 0.00);
 }
