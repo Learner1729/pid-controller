@@ -6,7 +6,9 @@
 * @copyright MIT License (c) 2018  
 */
 
+// c++ header file
 #include <iostream>
+// user defined header file
 #include "pid.hpp"
 
 /**
@@ -34,6 +36,7 @@ PIDController::PIDController(double Kp, double Ki, double Kd,
                             previous_error_(0.0), accumulation_error_(0.0) {
     std::cout << "Parameterized constructor called" << std::endl;
 }
+
 /**
  * @brief compute method 
  * @param[1] target_velocity, which is Set Point(SP)
@@ -46,5 +49,7 @@ double PIDController::compute(double target_velocity, double actual_velocity) {
     //       Step 2: Follow the green blocks from Activity Diagram 
     //               to write the code for this method
     //       Step 3: After Writing the method, build it and verify 
-    //               your implementation   
+    //               your implementation  
+
+    return 7; 
 }
