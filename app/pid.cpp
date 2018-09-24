@@ -43,13 +43,14 @@ PIDController::PIDController(double Kp, double Ki, double Kd,
  * @param[2] actual_velocity, which is Process Value (PV)
  * @return double
  */
-double PIDController::compute(double target_velocity, double actual_velocity) {
+auto PIDController::compute(double target_velocity, double actual_velocity) -> double {
     // TODO: Step 1: Check the Class Diagram and note down the member 
     //               variables and functions
     //       Step 2: Follow the green blocks from Activity Diagram 
     //               to write the code for this method
     //       Step 3: After Writing the method, build it and verify 
     //               your implementation  
+    
     return 7; 
 }
 
@@ -58,7 +59,7 @@ double PIDController::compute(double target_velocity, double actual_velocity) {
  * @param none
  * @return double
  */
-double PIDController::getPreviousError() {
+auto PIDController::getPreviousError() -> double {
     return previous_error_;
 }
 
@@ -67,7 +68,7 @@ double PIDController::getPreviousError() {
  * @param none
  * @return double
  */
-double PIDController::getAccumulationError() {
+auto PIDController::getAccumulationError() -> double {
     return accumulation_error_;
 }
 
@@ -76,6 +77,6 @@ double PIDController::getAccumulationError() {
  * @param none
  * @return double
  */
-double PIDController::getTimeInterval() {
+auto PIDController::getTimeInterval() -> double {
     return time_interval_;
 }

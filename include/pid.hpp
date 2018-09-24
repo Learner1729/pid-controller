@@ -34,28 +34,28 @@ class PIDController{
   * @param[2] actual_velocity, which is Process Value (PV)
   * @return double
   */
-  double compute(double target_velocity, double actual_velocity);
+  auto compute(double target_velocity, double actual_velocity) -> double;
 
   /**
   * @brief Method to get value of private class member previous_error_ 
   * @param none
   * @return double
   */
-  double getPreviousError();
+  auto getPreviousError() -> double;
 
   /**
   * @brief Method to get value of private class member accumulation_error_ 
   * @param none
   * @return double
   */
-  double getAccumulationError();
+  auto getAccumulationError() -> double;
 
   /**
   * @brief Method to get value of private class member time_interval_ 
   * @param none
   * @return double
   */
-  double getTimeInterval();
+  auto getTimeInterval() -> double;
  private:
   double Kp_, Ki_, Kd_, time_interval_, previous_error_, accumulation_error_;
 };
