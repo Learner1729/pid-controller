@@ -3,20 +3,39 @@
 [![Coverage Status](https://coveralls.io/repos/github/ysshah95/pid-controller/badge.svg?branch=master)](https://coveralls.io/github/ysshah95/pid-controller?branch=master)
 ---
 
-## Authors
-- **Driver:** Yash Shah (UID: 115710498)
-- **Navigator:** Ashish Patel (UID: 115730625)
+## Table of Contents
+- [Overview](#overview)
+- [Introduction to PID Controller](#intro)
+- [Authors](#authors)
+- [Class Diagram](#class)
+- [Activity Diagram](#activity)
+- [Standard install via command-line](#implementation)
+- [Working with Eclipse IDE](#eclipse)
 
-## Overview
+## <a name="overview"></a> Overview
+This repo is developed as a part of developing new mobile robot product for ACME Robotics. It implements PID Controller functionality for a new mobile robot. The team members working to develop this project uses pair programming software development technique. The authors are listed in the author section below. 
 
-Simple starter C++ project with:
+This repository serves as a simple C++ PID controller algorithm implementation with:
 
 - cmake
 - googletest
 
-## Standard install via command-line
+## <a name="intro"></a> Introduction to PID controller
+PID is a control loop feedback mechanism. It continuously calculates an error value as the difference between a defined setpoint (SP) and a measured process value (PV) and applies correction based on Proportional, Integral and Derivative terms. The first component of PID controller is P which stands for proportional, that means it adjusts the output proportionally to the error using Kp, proportional coefficient. It's a constant non-negative value that is determined during the tuning process of the controller. The second component of controller is I which stands for integral, in mathematical term that means the accumulation of something with respect to something else. In this case accumulation of error over time. Its has an integral coefficient Ki. The third compoent of controller is D which stands for derivative, in mathematical term that means the slope of a curve. Its has a derivative coefficient Kd. 
+
+The above three coefficients are used in tuning a PID controller. Tuning is the process of determining the ideal values for Kp, Ki, and Kd in order to achieve the desired response.  
+
+## <a name="authors"></a> Authors for part 1
+- **Driver:** Yash Shah (UID: 115710498)
+- **Navigator:** Ashish Patel (UID: 115730625)
+
+## <a name="class"></a> Class Diagram
+
+## <a name="activity"></a> Activity Diagram
+
+## <a name="implementation"></a> Standard install via command-line
 ```
-git clone --recursive https://github.com/dpiet/cpp-boilerplate
+git clone --recursive https://github.com/ysshah95/pid-controller.git
 cd <path to repository>
 mkdir build
 cd build
@@ -35,7 +54,7 @@ make code_coverage
 ```
 This generates a index.html page in the build/coverage sub-directory that can be viewed locally in a web browser.
 
-## Working with Eclipse IDE ##
+## <a name="eclipse"></a> Working with Eclipse IDE ##
 
 ## Installation
 
@@ -43,7 +62,7 @@ In your Eclipse workspace directory (or create a new one), checkout the repo (an
 ```
 mkdir -p ~/workspace
 cd ~/workspace
-git clone --recursive https://github.com/dpiet/cpp-boilerplate
+git clone --recursive https://github.com/ysshah95/pid-controller.git
 ```
 
 In your work directory, use cmake to create an Eclipse project for an [out-of-source build] of cpp-boilerplate
