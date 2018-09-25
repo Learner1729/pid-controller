@@ -8,8 +8,11 @@
 - [Authors](#authors)
 - [Class Diagram](#class)
 - [Activity Diagram](#activity)
+- [Test Cases](#test)
 - [Standard install via command-line](#implementation)
 - [Working with Eclipse IDE](#eclipse)
+- [Discussion Notes](#notes)
+- [TODO](#todo)
 
 ## <a name="overview"></a> Overview
 This repo is developed as a part of developing new mobile robot product for ACME Robotics. It implements PID Controller functionality for a new mobile robot. The team members working to develop this project uses pair programming software development technique. The authors are listed in the author section below. 
@@ -45,6 +48,14 @@ alt="NMPC" width="480" height="360" border="10" />
 alt="NMPC" width="480" height="960" border="10" />
 </a>
 </p>
+
+## <a name="test"></a> Test Cases
+
+>Note: The below materials were taken from a pdf file of PID turning process downloaded from this [website](https://controlstation.com/).
+We discussed few more test cases after completing part 2, to improve upon current implementation. There are a variety of tests that are commonly performed in industry. They include the Step Test, Pulse Test, Doublet Test, and Pseudo-Random Binary Sequence (PRBS). 
+1. **Step or Convergence Test**: In step test a Controller Output is “stepped” from one constant value to another. It's used to check that the measured variable is steping up from one steady state to new steady state. We can implement to check the convergence of the controller to a new velocity in a particular duration.
+2. **Pulse test**: Two step test performed in a rapid succession denotes pulse test.
+3. **Doublet Test**: Two pulse tests performed in rapid succession and in opposite directions. The second pulse is implemented when a clear response is achieved in first pulse. 
 
 ## <a name="implementation"></a> Standard install via command-line
 ```
@@ -160,3 +171,26 @@ perspetive view (or Windows->Perspective->Open Perspective->C/C++).
 - Git
 
     It is possible to manage version control through Eclipse and the git plugin, but it typically requires creating another project. If you're interested in this, try it out yourself and contact me on Canvas.
+
+## <a name="notes"></a> Discussion Notes
+
+For this assignment we conducted two discussion meetings. First, before fully implementing part1, regarding how the project should be developed. Second, after Part2, regarding what kind of changes are needed to be done. 
+
+First discussion meeting took place on 22th September (Saturday) between 5:30 pm to 6:30 pm at Mckeldin library. In this meeting, we covered the concepts regarding pair programming, decided the drivers and navigators for part 1 and discussed what kind of unit test can be developed for a generalized system. Few doubts regarding the directory structure, git commiting & git pull request, Travis & Coveralls badges and regarding UML diagrams were also discussed.
+
+Second discussion meeting took place on 24th September (Monday) between 10:00 pm to 12:00 am at Mckeldin library. In this meeting, we firstly resolved issues regrading part 1 and then completed part 2. After implementing correct compute function of both the pairs, pull request where generated and tested in travis before finally merging it into the repository. After mergeing it, we discussed following topics and listed out further improvements in TODO section.
+
+>Note: Discussion Notes and TODO were added after mergeing the pull request, because we wanted to make sure that we aren't facing any issuses regarding Travis and Coveralls badges.
+
+**Discussion Topics:**
+- **C++:** Discussed improvements regarding code developed in part 1 and part 2, mostly how we can use inline contructors and auto & decltype keyword to corporate C++11 syntax in our code. Along with that, file naming conventions and necessary improvements regarding C++ coding were suggested.
+- **UML Diagram & Object oriented class definition:** Discussed how class implementation can be done in a better way, mainly regarding how private member variables in a particular class can be selected. Suggestions regarding PID algorithm variables like previous_error_, accumulation_error_ should be class variables instead of local class method variables to retain their values. This can facilitate easy integration with other class modules and control loop in main function.
+- **PID Controller Implementation:** Discussed the ways in which both pairs have implemented PID controller.
+- **Test cases:** Discussed various test cases that can be developed for PID Controller and mentioned the new test cases that can be incorported within the program in TODO list. Also, discussed the difference between EXPECT & ASSERT macros and made suggestions of incorporating it in the test cases. Furthermore, suggestion of incorporating new test cases listed in Test Cases section were discussed to implement in our repository.
+
+## <a name="todo"></a> TODO
+
+- Issuses regarding Coveralls badge was to be resolved. 
+>(Note: Apart from modification in CMakeLists.txt to include the "include" directory no other modifications were needed. The issue was with browser cache memory.)
+- Incorporating coverage test case for PID controller.
+
