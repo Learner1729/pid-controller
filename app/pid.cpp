@@ -1,9 +1,9 @@
-/* 
+/*
 * @file pid.cpp
 * @Auther Yash Shah (Driver),  Ashish Patel (Navigator)
 * @version 1.0
 * @brief Definition of PIDController class methods
-* @copyright MIT License (c) 2018  
+* @copyright MIT License (c) 2018
 */
 
 // c++ header file
@@ -14,7 +14,7 @@
 /**
  * @brief PIDController constructor
  * @param none
- * @return none 
+ * @return none
  */
 PIDController::PIDController(void) : Kp_(0.5), Ki_(0.001), Kd_(0.01),
                                     time_interval_(0.05), previous_error_(0.0),
@@ -38,28 +38,46 @@ PIDController::PIDController(double Kp, double Ki, double Kd,
 }
 
 /**
- * @brief compute method 
+ * @brief compute method
  * @param[1] target_velocity, which is Set Point(SP)
  * @param[2] actual_velocity, which is Process Value (PV)
  * @return double
  */
 auto PIDController::compute(double target_velocity,
                             double actual_velocity) -> double {
-    // TODO(hrishikeshtawade04)
-    // Step 1: Check the Class Diagram and note down the member
-    //         variables and functions
-    // Step 2: Follow the green blocks from Activity Diagram
-    //         to write the code for this method
-    // Step 3: After Writing the method, build it and verify
-    //         your implementation
-    //
-    // Note: No need to initialize previous_error_ and
-    //       accumulation_error_ in this function
-    return 7;
+  auto error = 0.0;
+  error = target_velocity - actual_velocity;
+  // Setting new actual velocity to return it in case of error is zero
+  auto newActualVelocity = actual_velocity;
+  // If error is zero return same velocity
+  if (error == 0.0) {
+    return newActualVelocity;
+  } else {  // compute new velocity based on pid algorithm
+    // pid terms
+    auto propError = 0.0;
+    auto integError = 0.0;
+    auto diffError = 0.0;
+    // summing up error for integral term
+    this->accumulation_error_ = this->accumulation_error_
+        + error * this->time_interval_;
+    // finding error difference for differential term
+    diffError = error - this->previous_error_;
+    propError = this->Kp_ * error;
+    integError = this->Ki_ * this->accumulation_error_;
+    diffError = this->Kd_ * diffError / this->time_interval_;
+    // setting new error as previous error
+    // to use it next for pid iteration
+    this->previous_error_ = error;
+    // calculating new velocity by adding pid terms
+    // and given velocity
+    newActualVelocity = propError + integError + diffError + newActualVelocity;
+
+  }
+  return newActualVelocity;
 }
 
 /**
- * @brief Method to get value of private class member previous_error_ 
+ * @brief Method to get value of private class member previous_error_
  * @param none
  * @return double
  */
@@ -68,7 +86,7 @@ auto PIDController::getPreviousError() -> double {
 }
 
 /**
- * @brief Method to get value of private class member accumulation_error_ 
+ * @brief Method to get value of private class member accumulation_error_
  * @param none
  * @return double
  */
@@ -77,7 +95,7 @@ auto PIDController::getAccumulationError() -> double {
 }
 
 /**
- * @brief Method to get value of private class member time_interval_ 
+ * @brief Method to get value of private class member time_interval_
  * @param none
  * @return double
  */
