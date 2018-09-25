@@ -1,7 +1,6 @@
 # PID Controller 
 [![Build Status](https://travis-ci.org/ysshah95/pid-controller.svg?branch=master)](https://travis-ci.org/ysshah95/pid-controller)
 [![Coverage Status](https://coveralls.io/repos/github/ysshah95/pid-controller/badge.svg?branch=master)](https://coveralls.io/github/ysshah95/pid-controller?branch=master)
----
 
 ## Table of Contents
 - [Overview](#overview)
