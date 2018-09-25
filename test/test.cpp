@@ -45,3 +45,18 @@ TEST(PIDControllerTest, computeFunction) {
   EXPECT_DOUBLE_EQ(control.compute(7.0, 8.0), 7.91);
   EXPECT_DOUBLE_EQ(control.compute(0.0, 0.0), 0.00);
 }
+
+/**
+ *@brief Designing a convergence test for our PIDController.
+ */
+TEST(PIDControllerTest, convergenceTesting) {
+  PIDController control4(0.6, 0.1, 0.003, 0.1); // Create an object to be used in the tests
+	auto tolerance = 0.1;
+	auto iterations = 100;
+	auto currentVelocity = 1.0;
+	auto targetVelocity = 15.0;
+	for(auto i=0;i<iterations;++i)  {
+		currentVelocity = control4.compute(targetVelocity, currentVelocity);
+	}
+	EXPECT_NEAR(targetVelocity, currentVelocity, tolerance);
+}
