@@ -30,8 +30,8 @@ The above three coefficients are used in tuning a PID controller. Tuning is the 
 - **Navigator:** Ashish Patel (UID: 115730625) (github: Learner1729)
 
 ## Authors for Part 2
-- **Driver:** 
-- **Navigator:** 
+- **Driver:** Hrishikesh Tawade (UID: 116078092) (github: hrishikeshtawade04)
+- **Navigator:** Saurav Kumar (UID: 116139960) (github: sauravkdeo)
 
 ## <a name="class"></a> Class Diagram
 <p align="center">
