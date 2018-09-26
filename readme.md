@@ -15,7 +15,7 @@
 - [TODO](#todo)
 
 ## <a name="overview"></a> Overview
-This repo is developed as a part of developing new mobile robot product for ACME Robotics. It implements PID Controller functionality for a new mobile robot. The team members working to develop this project uses pair programming software development technique. The authors are listed in the author section below. 
+This repo is developed as a part of developing new mobile robot product for ACME Robotics. It implements [PID Controller](https://en.wikipedia.org/wiki/PID_controller) functionality for a new mobile robot. The team members working to develop this project uses pair programming software development technique. The authors are listed in the author section below. 
 
 This repository serves as a simple C++ PID controller algorithm implementation with:
 
@@ -23,7 +23,7 @@ This repository serves as a simple C++ PID controller algorithm implementation w
 - googletest
 
 ## <a name="intro"></a> Introduction to PID controller
-PID is a control loop feedback mechanism. It continuously calculates an error value as the difference between a defined setpoint (SP) and a measured process value (PV) and applies correction based on Proportional, Integral and Derivative terms. The first component of PID controller is P which stands for proportional, that means it adjusts the output proportionally to the error using Kp, proportional coefficient. It's a constant non-negative value that is determined during the tuning process of the controller. The second component of controller is I which stands for integral, in mathematical term that means the accumulation of something with respect to something else. In this case accumulation of error over time. Its has an integral coefficient Ki. The third compoent of controller is D which stands for derivative, in mathematical term that means the slope of a curve. Its has a derivative coefficient Kd. 
+[PID](https://en.wikipedia.org/wiki/PID_controller) is a control loop feedback mechanism. It continuously calculates an error value as the difference between a defined setpoint (SP) and a measured process value (PV) and applies correction based on Proportional, Integral and Derivative terms. The first component of PID controller is P which stands for proportional, that means it adjusts the output proportionally to the error using Kp, proportional coefficient. It's a constant non-negative value that is determined during the tuning process of the controller. The second component of controller is I which stands for integral, in mathematical term that means the accumulation of something with respect to something else. In this case accumulation of error over time. Its has an integral coefficient Ki. The third compoent of controller is D which stands for derivative, in mathematical term that means the slope of a curve. Its has a derivative coefficient Kd. 
 
 The above three coefficients are used in tuning a PID controller. Tuning is the process of determining the ideal values for Kp, Ki, and Kd in order to achieve the desired response.  
 
@@ -45,7 +45,7 @@ alt="NMPC" width="480" height="360" border="10" />
 ## <a name="activity"></a> Activity Diagram
 <p align="center">
 <a target="_blank"><img src="UML_Diagrams/ActivityDiagram_TDD.png"
-alt="NMPC" width="480" height="960" border="10" />
+alt="NMPC" width="480" height="720" border="10" />
 </a>
 </p>
 
@@ -53,7 +53,7 @@ alt="NMPC" width="480" height="960" border="10" />
 
 >Note: The below materials were taken from a pdf file of PID turning process downloaded from this [website](https://controlstation.com/).
 We discussed few more test cases after completing part 2, to improve upon current implementation. There are a variety of tests that are commonly performed in industry. They include the Step Test, Pulse Test, Doublet Test, and Pseudo-Random Binary Sequence (PRBS). 
-1. **Step or Convergence Test**: In step test a Controller Output is “stepped” from one constant value to another. It's used to check that the measured variable is steping up from one steady state to new steady state. We can implement to check the convergence of the controller to a new velocity in a particular duration.
+1. **Step or Convergence Test**(Implemented): In step test a Controller Output is “stepped” from one constant value to another. It's used to check that the measured variable is steping up from one steady state to new steady state. We can implement to check the convergence of the controller to a new velocity in a particular duration.
 2. **Pulse test**: Two step test performed in a rapid succession denotes pulse test.
 3. **Doublet Test**: Two pulse tests performed in rapid succession and in opposite directions. The second pulse is implemented when a clear response is achieved in first pulse. 
 
@@ -176,9 +176,9 @@ perspetive view (or Windows->Perspective->Open Perspective->C/C++).
 
 For this assignment we conducted two discussion meetings. First, before fully implementing part1, regarding how the project should be developed. Second, after Part2, regarding what kind of changes are needed to be done. 
 
-First discussion meeting took place on 22th September (Saturday) between 5:30 pm to 6:30 pm at Mckeldin library. In this meeting, we covered the concepts regarding pair programming, decided the drivers and navigators for part 1 and discussed what kind of unit test can be developed for a generalized system. Few doubts regarding the directory structure, git commiting & git pull request, Travis & Coveralls badges and regarding UML diagrams were also discussed.
+First discussion meeting took place on *22th September (Saturday) between 5:30 pm to 6:30 pm at Mckeldin library*. In this meeting, we covered the concepts regarding pair programming, decided the drivers and navigators for part 1 and discussed what kind of unit test can be developed for a generalized system. Few doubts regarding the directory structure, git commiting & git pull request, Travis & Coveralls badges and regarding UML diagrams were also discussed.
 
-Second discussion meeting took place on 24th September (Monday) between 10:00 pm to 12:00 am at Mckeldin library. In this meeting, we firstly resolved issues regrading part 1 and then completed part 2. After implementing correct compute function of both the pairs, pull request where generated and tested in travis before finally merging it into the repository. After mergeing it, we discussed following topics and listed out further improvements in TODO section.
+Second discussion meeting took place on *24th September (Monday) between 10:00 pm to 12:00 am at Mckeldin library*. In this meeting, we firstly resolved issues regrading part 1 and then completed part 2. After implementing correct compute function of both the pairs, pull request where generated and tested in travis before finally merging it into the repository. After mergeing it, we discussed following topics and listed out further improvements in TODO section.
 
 >Note: Discussion Notes and TODO were added after mergeing the pull request, because we wanted to make sure that we aren't facing any issuses regarding Travis and Coveralls badges.
 
@@ -192,5 +192,5 @@ Second discussion meeting took place on 24th September (Monday) between 10:00 pm
 
 - Issuses regarding Coveralls badge was to be resolved. 
 >(Note: Apart from modification in CMakeLists.txt to include the "include" directory no other modifications were needed. The issue was with browser cache memory.)
-- Incorporating coverage test case for PID controller.
+- Incorporating coverage test case for PID controller. (Implemented as directed by other pair)
 
