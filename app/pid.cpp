@@ -1,13 +1,14 @@
-/*
-* @file pid.cpp
-* @Auther Yash Shah (Driver),  Ashish Patel (Navigator)
-* @version 1.0
-* @brief Definition of PIDController class methods
-* @copyright MIT License (c) 2018
-*/
+/**
+ * @file pid.cpp
+ * @Auther Yash Shah (Driver),  Ashish Patel (Navigator)
+ * @version 1.0
+ * @brief Definition of PIDController class methods
+ * @copyright MIT License (c) 2018
+ */
 
 // c++ header file
 #include <iostream>
+
 // user defined header file
 #include "pid.hpp"
 
@@ -71,7 +72,6 @@ auto PIDController::compute(double target_velocity,
     // calculating new velocity by adding pid terms
     // and given velocity
     newActualVelocity = propError + integError + diffError + newActualVelocity;
-
   }
   return newActualVelocity;
 }

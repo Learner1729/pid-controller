@@ -1,13 +1,14 @@
-/* 
-* @file test.cpp
-* @Auther Yash Shah (Driver),  Ashish Patel (Navigator)
-* @version 1.0
-* @brief Program that tests the PIDController
-* @copyright MIT License (c) 2018  
-*/
+/**
+ * @file test.cpp
+ * @Auther Yash Shah (Driver),  Ashish Patel (Navigator)
+ * @version 1.0
+ * @brief Program that tests the PIDController
+ * @copyright MIT License (c) 2018  
+ */
 
-// c++ header file
+// gtest header file
 #include <gtest/gtest.h>
+
 // user defined header file
 #include "pid.hpp"
 
@@ -50,13 +51,14 @@ TEST(PIDControllerTest, computeFunction) {
  *@brief Designing a convergence test for our PIDController.
  */
 TEST(PIDControllerTest, convergenceTesting) {
-  PIDController control4(0.6, 0.1, 0.003, 0.1); // Create an object to be used in the tests
-	auto tolerance = 0.1;
-	auto iterations = 100;
-	auto currentVelocity = 1.0;
-	auto targetVelocity = 15.0;
-	for(auto i=0;i<iterations;++i)  {
-		currentVelocity = control4.compute(targetVelocity, currentVelocity);
-	}
-	EXPECT_NEAR(targetVelocity, currentVelocity, tolerance);
+  // Create an object to be used in the tests
+  PIDController control4(0.6, 0.1, 0.003, 0.1);
+  auto tolerance = 0.1;
+  auto iterations = 100;
+  auto currentVelocity = 1.0;
+  auto targetVelocity = 15.0;
+  for (auto i = 0; i < iterations; ++i)  {
+    currentVelocity = control4.compute(targetVelocity, currentVelocity);
+  }
+  EXPECT_NEAR(targetVelocity, currentVelocity, tolerance);
 }
